@@ -76,6 +76,7 @@ import { MessageTimestamp } from '../atoms/MessageTimestamp.js';
 import { MonacoEditorCore } from '../atoms/MonacoEditorCore.js';
 import { OpenUiFenceBlock } from '../atoms/OpenUiFenceBlock.js';
 import { PermissionGuard } from '../atoms/PermissionGuard.js';
+import { ResetAgentBuilderButton } from '../atoms/ResetAgentBuilderButton.js';
 import { SandboxArtifactDownload } from '../atoms/SandboxArtifactDownload.js';
 import { SandboxToolCallCard } from '../atoms/SandboxToolCallCard.js';
 import { SaveAgentButton } from '../atoms/SaveAgentButton.js';
@@ -259,6 +260,7 @@ export const defaultSlots = {
   SaveAgentForm,
   SelectAgentEmptyState,
   ClearChatButton,
+  ResetAgentBuilderButton,
   ShareChatButton,
   ShareSessionDialog,
   ThreadListRowSkeleton,

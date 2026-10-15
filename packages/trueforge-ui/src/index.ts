@@ -303,6 +303,7 @@ export {
   readSessionIsCreateAgent,
   sessionIsCreateAgent,
 } from './atoms/lib/sessionCreateAgent.js';
+export { ResetAgentBuilderButton } from './atoms/ResetAgentBuilderButton.js';
 export { SelectAgentEmptyState } from './atoms/SelectAgentEmptyState.js';
 export { ShareChatButton } from './atoms/ShareChatButton.js';
 export { ShareSessionDialog } from './atoms/ShareSessionDialog.js';

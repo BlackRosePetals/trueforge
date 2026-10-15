@@ -59,6 +59,7 @@ const expectedRuntimeExports: Array<keyof typeof sdk> = [
   'ChatFileDownload',
   'FilePreviewPanel',
   'ClearChatButton',
+  'ResetAgentBuilderButton',
   'CodeEditor',
   'ComposerAttachmentPickerContainer',
   'ComposerAttachmentsContainer',
