@@ -4,6 +4,7 @@ import type { Context, MiddlewareHandler } from 'hono';
 import { HTTPException } from 'hono/http-exception';
 import { jwtVerify } from 'jose';
 
+import { updateLogContext } from '../logger';
 import type { Authenticator } from './authenticator';
 import { toRequestContext, type IdTokenClaims } from './claims';
 import { hasAdminRole, type RequestContext } from './identity';
@@ -19,6 +20,7 @@ export function createAuthMiddleware(authenticator: Authenticator): MiddlewareHa
       throw new HTTPException(401, { message: 'Authentication required' });
     }
     c.set('request_context', requestContext);
+    updateLogContext({ tenant_id: requestContext.tenant_id });
     return next();
   };
 }
@@ -29,6 +31,7 @@ export function createAdminAuthMiddleware(authenticator: Authenticator): Middlew
     if (requestContext === undefined) {
       throw new HTTPException(401, { message: 'Authentication required' });
     }
+    updateLogContext({ tenant_id: requestContext.tenant_id });
     if (!hasAdminRole(requestContext)) {
       throw new HTTPException(403, { message: 'Admin access required' });
     }
