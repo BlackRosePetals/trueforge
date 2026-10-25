@@ -238,7 +238,10 @@ export class Sandbox<TEnvironment = undefined> extends LocalToolMCP {
   ];
 
   constructor(options: SandboxOptions<TEnvironment>) {
-    super({ tracing: options.tracing });
+    super({
+      tracing: options.tracing,
+      serverClass: 'sandbox',
+    });
     this.provider = options.provider;
     this.environment = options.environment;
     this.existingSandboxId = options.existingSandboxId;

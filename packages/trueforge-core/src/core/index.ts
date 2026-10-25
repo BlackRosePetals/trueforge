@@ -155,6 +155,44 @@ export type {
   AgentTracing,
 } from './tracing/AgentTracing';
 
+export {
+  configureOperationMetrics,
+  elapsedSeconds,
+  getOperationMetrics,
+  httpStatusClass,
+  observeMcpOperation,
+} from './observability/operationMetrics';
+export type {
+  HarnessLimit,
+  LlmFinishReason,
+  LlmProviderType,
+  LlmRequestOutcome,
+  LlmStreamErrorKind,
+  McpConnectOutcome,
+  McpDisconnectVia,
+  McpMethod,
+  McpOperationOutcome,
+  McpServerClass,
+  McpTransport,
+  OperationMetrics,
+  OutboundHttpModule,
+  OutboundHttpOutcome,
+  OutboundHttpRetryReason,
+  OutboundHttpRetryStatus,
+  OutboundHttpStatusClass,
+  ParallelWebOperation,
+  ParallelWebOutcome,
+  PostgresQueryOutcome,
+  ServiceFoundryOperation,
+  ServiceFoundryOutcome,
+  ToolCallOutcome,
+  ToolCallServerClass,
+  TurnPersistPhase,
+  TurnSsePath,
+  TurnTerminalStatus,
+  TurnTimeoutPhase,
+} from './observability/operationMetrics';
+
 // Errors / utils
 export { AgentHarnessError, McpConnectionError, McpDcrConfigurationError } from './errors';
 export { REDIS_KEY_NAMESPACE, redisKey } from './redisKeys';
@@ -183,6 +221,8 @@ export {
 export { PromiseTimeoutError, withTimeout } from './util/promiseUtils';
 export { type ReportableErrorLog } from './util/reportableErrorLog';
 export {
+  OUTBOUND_URL_BLOCKED,
+  OutboundUrlBlockedError,
   assertSafeOutboundUrl,
   configureOutboundUrlGuard,
   createOutboundFetch,
